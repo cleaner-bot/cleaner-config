@@ -8,4 +8,5 @@ setup(
     author_email="git@leodev.xyz",
     description="configuration of the cleaner",
     packages=find_namespace_packages(include=["cleaner_conf*"]),
+    package_data={"cleaner_conf": ["py.typed"]},
 )

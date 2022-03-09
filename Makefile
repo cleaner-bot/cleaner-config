@@ -10,7 +10,7 @@ coverage:
 
 lint:
 	flake8 . --max-line-length 88
-	mypy .
+	mypy . --exclude build
 	codespell . --skip ".*"
 
 test-all: coverage lint
