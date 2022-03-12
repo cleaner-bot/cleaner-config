@@ -2,7 +2,7 @@
 Entitlments are read-only.
 """
 
-from .values import PlanValue, IntegerValue, DictType
+from ..values import PlanValue, IntegerValue, DictType
 
 
 entitlements: DictType = {

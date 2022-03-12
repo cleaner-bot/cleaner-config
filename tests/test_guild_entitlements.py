@@ -1,4 +1,4 @@
-from cleaner_conf import entitlements, Entitlements
+from cleaner_conf.guild.entitlements import entitlements, Entitlements
 
 
 def test_typehint():

@@ -1,4 +1,4 @@
-from cleaner_conf import config, Config
+from cleaner_conf.guild.config import config, Config
 
 
 def test_typehint():

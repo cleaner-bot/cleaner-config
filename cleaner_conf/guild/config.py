@@ -2,7 +2,7 @@
 Config variables are read/write.
 """
 
-from .values import (
+from ..values import (
     BaseValue,
     BooleanValue,
     BotTokenValue,
