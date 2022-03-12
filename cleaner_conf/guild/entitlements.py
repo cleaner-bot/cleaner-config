@@ -6,6 +6,7 @@ from ..values import PlanValue, IntegerValue, DictType
 
 
 entitlements: DictType = {
+    "suspended": IntegerValue(default=0, description="Guild is suspended."),
     "plan": PlanValue(default=0, description="Current plan."),
     "workers": PlanValue(default=1, description="Workers unlock."),
     "workers_cpu": IntegerValue(
@@ -44,6 +45,7 @@ entitlements: DictType = {
 
 
 class Entitlements:
+    suspended: bool
     plan: int
     workers: int
     workers_cpu: int
