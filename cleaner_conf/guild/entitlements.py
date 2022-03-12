@@ -6,7 +6,9 @@ from ..values import PlanValue, IntegerValue, DictType
 
 
 entitlements: DictType = {
-    "suspended": IntegerValue(default=0, min=0, max=1, description="Guild is suspended."),
+    "suspended": IntegerValue(
+        default=0, min=0, max=1, description="Guild is suspended."
+    ),
     "plan": PlanValue(default=0, description="Current plan."),
     "workers": PlanValue(default=1, description="Workers unlock."),
     "workers_cpu": IntegerValue(
