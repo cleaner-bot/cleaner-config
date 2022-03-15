@@ -82,7 +82,7 @@ config: DictType = {
         default=70, min=0, max=100, description="Custom join risk."
     ),
     "challenge_interactive_level": IntegerValue(
-        default=3,
+        default=2,
         min=0,
         max=5,
         description="Security level. custom/off/low/medium/high/iuam",
