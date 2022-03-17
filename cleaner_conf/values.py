@@ -11,14 +11,14 @@ from .helper import (
 
 class BaseValue:
     default: typing.Any
-    description: typing.Optional[str] = None
+    description: str | None = None
     hidden: bool = False
 
     def __init__(
         self,
         *,
         default: typing.Any,
-        description: typing.Optional[str] = None,
+        description: str | None = None,
         hidden: bool = False
     ) -> None:
         self.default = default
@@ -57,10 +57,10 @@ class BooleanValue(BaseValue):
     def validate_string(self, value: str):
         try_boolean(value)
 
-    def from_string(self, value: str) -> typing.Any:
+    def from_string(self, value: str) -> bool:
         return try_boolean(value)
 
-    def to_string(self, value: typing.Any) -> str:
+    def to_string(self, value: bool) -> str:
         return "yes" if value else "no"
 
 
@@ -101,12 +101,12 @@ class ListValue(BaseValue):
             for text in value.split(","):
                 self.item.validate_string(text)
 
-    def from_string(self, value: str) -> typing.Any:
+    def from_string(self, value: str) -> list[typing.Any]:
         if not value:
             return []
         return [self.item.from_string(x) for x in value.split(",")]
 
-    def to_string(self, value: typing.Any) -> str:
+    def to_string(self, value: list[typing.Any]) -> str:
         if not value:
             return ""
         return ",".join(self.item.to_string(x) for x in value)
@@ -124,4 +124,4 @@ class PlanValue(IntegerValue):
         super().__init__(min=0, max=3, **kwargs)
 
 
-DictType = typing.Dict[str, BaseValue]
+DictType = dict[str, BaseValue]
