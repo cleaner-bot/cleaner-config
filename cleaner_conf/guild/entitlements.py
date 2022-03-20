@@ -2,22 +2,22 @@
 Entitlments are read-only.
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, conint
 
 
 class GuildEntitlements(BaseModel):
-    suspended: bool = Field(False)
-    plan: int = Field(0, ge=0, le=2)
-    workers: int = Field(1, ge=0, le=2)
-    workers_cpu: int = Field(10, ge=10, le=50)
-    workers_ram: int = Field(1024 * 128, ge=1024 * 128, le=1024 * 1024)
-    workers_size: int = Field(1024 * 16, ge=1024 * 16, le=1024 * 1024)
-    challenge_interactive_join_risk: int = Field(1, ge=0, le=2)
-    challenge_interactive_custom_embed: int = Field(1, ge=0, le=2)
-    challenge_interactive_custom_webpage: int = Field(1, ge=0, le=2)
-    contact_standard: int = Field(1, ge=0, le=2)
-    contact_email: int = Field(2, ge=0, le=2)
-    bot_limit: int = Field(0, ge=0, le=100)
-    bot_dedicated: int = Field(2, ge=0, le=2)
-    logging_downloads: int = Field(1, ge=0, le=2)
-    logging_retention: int = Field(3, ge=3, le=12)
+    suspended: bool = False
+    plan: conint(ge=0, le=2) = 0
+    workers: conint(ge=0, le=2) = 1
+    workers_cpu: conint(ge=10, le=50) = 10
+    workers_ram: conint(ge=1024 * 128, le=1024 * 1024) = 1024 * 128
+    workers_size: conint(ge=1024 * 16, le=1024 * 256) = 1024 * 256
+    challenge_interactive_join_risk: conint(ge=0, le=2) = 1
+    challenge_interactive_custom_embed: conint(ge=0, le=2) = 1
+    challenge_interactive_custom_webpage: conint(ge=0, le=2) = 1
+    contact_standard: conint(ge=0, le=2) = 1
+    contact_email: conint(ge=0, le=2) = 2
+    bot_limit: conint(ge=0, le=100) = 0
+    bot_dedicated: conint(ge=0, le=2) = 2
+    logging_downloads: conint(ge=0, le=2) = 1
+    logging_retention: conint(ge=3, le=12) = 3
