@@ -39,5 +39,5 @@ class GuildConfig(BaseModel):
     logging_option_join: bool = False
     logging_downloads_enabled: bool = False
     workers_enabled: bool = False
-    workers_script: constr(max_length=1024 * 256)
-    bot_custom: constr(regex=r"[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+", max_length=256)
+    workers_script: constr(max_length=1024 * 256) = ""
+    bot_custom: constr(regex=r"[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+", max_length=256) = ""
