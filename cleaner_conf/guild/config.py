@@ -33,11 +33,11 @@ class GuildConfig(BaseModel):
     challenge_interactive_role: constr(regex=r"\d{1,21}") = "0"
     challenge_interactive_joinrisk_custom: conint(ge=0, le=100) = 70
     challenge_interactive_level: conint(ge=0, le=5) = 2
-    challenge_interactive_webpage_splash: constr(regex="https?://.+", max_length=256) = ""
+    challenge_interactive_webpage_splash: constr(regex="^$|https?://.+", max_length=256) = ""
     logging_enabled: bool = False
     logging_channel: constr(regex=r"\d{1,21}") = "0"
     logging_option_join: bool = False
     logging_downloads_enabled: bool = False
     workers_enabled: bool = False
     workers_script: constr(max_length=1024 * 256) = ""
-    bot_custom: constr(regex=r"[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+", max_length=256) = ""
+    bot_custom: constr(regex=r"^$|[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+", max_length=256) = ""
