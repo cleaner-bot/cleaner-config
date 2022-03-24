@@ -17,7 +17,7 @@ class GuildEntitlements(BaseModel):
     challenge_interactive_custom_embed: conint(ge=0, le=2) = 1
     challenge_interactive_custom_webpage: conint(ge=0, le=2) = 1
     contact_standard: conint(ge=0, le=2) = 1
-    contact_email: conint(ge=0, le=2) = 2
+    contact_email: conint(ge=0, le=2) = 1
     bot_limit: conint(ge=0, le=100) = 0
     bot_dedicated: conint(ge=0, le=2) = 2
     logging_downloads: conint(ge=0, le=2) = 1
