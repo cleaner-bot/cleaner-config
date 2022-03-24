@@ -6,8 +6,9 @@ from pydantic import BaseModel, conint
 
 
 class GuildEntitlements(BaseModel):
-    suspended: bool = False
     plan: conint(ge=0, le=2) = 0
+    suspended: bool = False
+    partnered: bool = False
     workers: conint(ge=0, le=2) = 1
     workers_cpu: conint(ge=10, le=50) = 10
     workers_ram: conint(ge=1024 * 128, le=1024 * 1024) = 1024 * 128
