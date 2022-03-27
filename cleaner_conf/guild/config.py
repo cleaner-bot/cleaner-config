@@ -15,7 +15,7 @@ class GuildConfig(BaseModel):
     rules_ping_users_many: conint(ge=0, le=2) = 2
     rules_ping_users_few: conint(ge=0, le=2) = 1
     rules_ping_broad: conint(ge=0, le=2) = 1
-    rules_advertisement_discord_server: conint(ge=0, le=2) = 1
+    rules_advertisement_discord_invite: conint(ge=0, le=2) = 1
     rules_emoji_mass: conint(ge=0, le=2) = 0
     antispam_similar: bool = True
     antispam_exact: bool = True
