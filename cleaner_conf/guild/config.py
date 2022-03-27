@@ -23,24 +23,24 @@ class GuildConfig(BaseModel):
     antispam_sticker: bool = True
     antispam_attachment: bool = True
     overview_modroles: conlist(
-        constr(regex=r"\d{1,21}"), max_items=256, unique_items=True
+        constr(regex=r"^\d{1,21}$"), max_items=256, unique_items=True
     ) = Field(default_factory=list)
     overview_dehoisting_enabled: bool = True
     slowmode_enabled: bool = True
     slowmode_exceptions: conlist(
-        constr(regex=r"\d{1,21}"), max_items=256, unique_items=True
+        constr(regex=r"^\d{1,21}$"), max_items=256, unique_items=True
     ) = Field(default_factory=list)
     challenge_timeout_enabled: bool = True
     challenge_interactive_enabled: bool = False
     challenge_interactive_take_role: bool = False
-    challenge_interactive_role: constr(regex=r"\d{1,21}") = "0"
+    challenge_interactive_role: constr(regex=r"^\d{1,21}$") = "0"
     challenge_interactive_joinrisk_custom: conint(ge=0, le=100) = 70
     challenge_interactive_level: conint(ge=0, le=5) = 2
     challenge_interactive_webpage_splash: constr(
-        regex="^$|https?://.+", max_length=256
+        regex="^$|^https?://.+", max_length=256
     ) = ""
     logging_enabled: bool = False
-    logging_channel: constr(regex=r"\d{1,21}") = "0"
+    logging_channel: constr(regex=r"^\d{1,21}$") = "0"
     logging_option_join: bool = False
     logging_downloads_enabled: bool = False
     impersonation_discord_enabled: bool = True
@@ -54,5 +54,5 @@ class GuildConfig(BaseModel):
     workers_enabled: bool = False
     workers_script: constr(max_length=1024 * 256) = ""
     bot_custom: constr(
-        regex=r"^$|[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+", max_length=256
+        regex=r"^$|^[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+$", max_length=256
     ) = ""
