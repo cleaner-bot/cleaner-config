@@ -22,3 +22,4 @@ class GuildEntitlements(BaseModel):
     bot_dedicated: conint(ge=0, le=2) = 2
     logging_downloads: conint(ge=0, le=2) = 1
     logging_retention: conint(ge=3, le=12) = 3
+    impersonation_advanced: conint(ge=0, le=2) = 1

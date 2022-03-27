@@ -26,7 +26,6 @@ class GuildConfig(BaseModel):
         constr(regex=r"\d{1,21}"), max_items=256, unique_items=True
     ) = Field(default_factory=list)
     overview_dehoisting_enabled: bool = True
-    overview_discordimpersonation_enabled: bool = True
     slowmode_enabled: bool = True
     slowmode_exceptions: conlist(
         constr(regex=r"\d{1,21}"), max_items=256, unique_items=True
@@ -44,6 +43,14 @@ class GuildConfig(BaseModel):
     logging_channel: constr(regex=r"\d{1,21}") = "0"
     logging_option_join: bool = False
     logging_downloads_enabled: bool = False
+    impersonation_discord: bool = True
+    impersonation_advanced_enabled: bool = False
+    impersonation_advanced_subwords: conlist(
+        constr(max_length=32), max_items=300
+    ) = Field(default_factory=list)
+    impersonation_advanced_words: conlist(constr(max_length=32), max_items=300) = Field(
+        default_factory=list
+    )
     workers_enabled: bool = False
     workers_script: constr(max_length=1024 * 256) = ""
     bot_custom: constr(
