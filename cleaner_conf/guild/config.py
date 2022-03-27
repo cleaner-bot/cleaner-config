@@ -43,7 +43,7 @@ class GuildConfig(BaseModel):
     logging_channel: constr(regex=r"\d{1,21}") = "0"
     logging_option_join: bool = False
     logging_downloads_enabled: bool = False
-    impersonation_discord: bool = True
+    impersonation_discord_enabled: bool = True
     impersonation_advanced_enabled: bool = False
     impersonation_advanced_subwords: conlist(
         constr(max_length=32), max_items=300
