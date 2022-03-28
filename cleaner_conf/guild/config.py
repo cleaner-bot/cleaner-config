@@ -41,6 +41,7 @@ class GuildConfig(BaseModel):
     challenge_interactive_webpage_splash: constr(
         regex="^$|^https?://.+", max_length=256
     ) = ""
+    verification_enabled: bool = False
     logging_enabled: bool = False
     logging_channel: constr(regex=r"^\d{1,21}$") = "0"
     logging_option_join: bool = False
