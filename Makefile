@@ -2,6 +2,6 @@ install:
 	pip install .
 
 lint:
-	codespell . --skip ".*"
+	codespell .
 
-test-all: coverage lint
+test-all: lint
