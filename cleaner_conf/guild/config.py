@@ -42,6 +42,7 @@ class GuildConfig(BaseModel):
         regex="^$|^https?://.+", max_length=256
     ) = ""
     verification_enabled: bool = False
+    verification_role: constr(regex=r"^\d{1,21}$") = "0"
     logging_enabled: bool = False
     logging_channel: constr(regex=r"^\d{1,21}$") = "0"
     logging_option_join: bool = False
@@ -55,7 +56,6 @@ class GuildConfig(BaseModel):
         default_factory=list
     )
     workers_enabled: bool = False
-    workers_script: constr(max_length=1024 * 256) = ""
     bot_custom: constr(
         regex=r"^$|^[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+$", max_length=256
     ) = ""
