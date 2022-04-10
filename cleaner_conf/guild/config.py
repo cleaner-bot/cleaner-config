@@ -24,10 +24,10 @@ class GuildConfig(BaseModel):
     antispam_attachment: bool = True
     antiraid_enabled: bool = False
     antiraid_limit: constr(regex=r"^\d{1,5}/\d{1,3}$") = "10/10"
-    overview_modroles: conlist(
+    general_modroles: conlist(
         constr(regex=r"^\d{1,21}$"), max_items=256, unique_items=True
     ) = Field(default_factory=list)
-    overview_dehoisting_enabled: bool = True
+    general_dehoisting_enabled: bool = True
     slowmode_enabled: bool = True
     slowmode_exceptions: conlist(
         constr(regex=r"^\d{1,21}$"), max_items=256, unique_items=True
