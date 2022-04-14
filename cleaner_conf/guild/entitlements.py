@@ -21,6 +21,7 @@ class GuildEntitlements(BaseModel):
     logging_downloads: conint(ge=0, le=2) = 1
     logging_retention: conint(ge=3, le=12) = 3
     impersonation_advanced: conint(ge=0, le=2) = 1
+    analytics: conint(ge=0, le=2) = 1
     branding_splash: conint(ge=0, le=2) = 1
     branding_embed: conint(ge=0, le=2) = 1
     branding_vanity: conint(ge=0, le=2) = 1
