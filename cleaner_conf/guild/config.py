@@ -62,7 +62,7 @@ class GuildConfig(BaseModel):
     )
     workers_enabled: bool = False
     bot_custom: constr(
-        regex=r"^$|^[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+$", max_length=256
+        regex=r"^([a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+\.[a-zA-Z0-9+/]+)?$", max_length=256
     ) = ""
     branding_splash_enabled: bool = False
     branding_embed_enabled: bool = False
