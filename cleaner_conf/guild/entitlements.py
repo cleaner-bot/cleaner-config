@@ -23,3 +23,4 @@ class GuildEntitlements(BaseModel):
     impersonation_advanced: conint(ge=0, le=2) = 1
     branding_splash: conint(ge=0, le=2) = 1
     branding_embed: conint(ge=0, le=2) = 1
+    branding_vanity: conint(ge=0, le=2) = 1

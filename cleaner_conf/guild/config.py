@@ -68,3 +68,4 @@ class GuildConfig(BaseModel):
     branding_embed_enabled: bool = False
     branding_embed_title: constr(max_length=200) = ""
     branding_embed_description: constr(max_length=2048) = ""
+    branding_vanity: constr(regex="^([a-z]{2,32})?$") = ""
