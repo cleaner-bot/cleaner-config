@@ -3,7 +3,7 @@ from pathlib import Path
 
 setup(
     name="cleaner_conf",
-    version="0.1.4",
+    version="0.1.5",
     url="https://github.com/cleaner-bot/cleaner-config",
     author="Leo Developer",
     author_email="git@leodev.xyz",
