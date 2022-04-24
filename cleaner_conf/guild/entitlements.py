@@ -10,7 +10,6 @@ class GuildEntitlements(BaseModel):
     suspended: bool = False
     partnered: bool = False
     
-    statistics: conint(ge=0, le=2) = 1
     antiraid: conint(ge=0, le=2) = 0  # unused
     antispam: conint(ge=0, le=2) = 0  # unused
     backup: conint(ge=0, le=2) = 1
@@ -29,6 +28,7 @@ class GuildEntitlements(BaseModel):
     logging_downloads: conint(ge=0, le=2) = 1
     logging_retention: conint(ge=3, le=12) = 3
     slowmode: conint(ge=0, le=2) = 0  # unused
+    statistics: conint(ge=0, le=2) = 0
     verification: conint(ge=0, le=2) = 0  # unused
     workers: conint(ge=0, le=2) = 1  # unused
     workers_cpu: conint(ge=10, le=50) = 10  # unused
