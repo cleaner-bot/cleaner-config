@@ -29,6 +29,7 @@ class GuildEntitlements(BaseModel):
     logging_retention: conint(ge=3, le=12) = 3
     slowmode: conint(ge=0, le=2) = 0  # unused
     statistics: conint(ge=0, le=2) = 0
+    report: conint(ge=0, le=2) = 1
     verification: conint(ge=0, le=2) = 0  # unused
     workers: conint(ge=0, le=2) = 1  # unused
     workers_cpu: conint(ge=10, le=50) = 10  # unused
