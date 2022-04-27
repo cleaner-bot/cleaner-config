@@ -51,6 +51,8 @@ class GuildConfig(BaseModel):
     logging_enabled: bool = False
     logging_channel: constr(regex=snowflake_re) = "0"
     logging_option_join: bool = False
+    logging_option_leave: bool = False
+    logging_option_verify: bool = False
     logging_downloads_enabled: bool = False
     impersonation_discord_enabled: bool = True
     impersonation_advanced_enabled: bool = False
