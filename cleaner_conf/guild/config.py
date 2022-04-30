@@ -40,12 +40,8 @@ class GuildConfig(BaseModel):
     challenge_interactive_role: constr(regex=snowflake_re) = "0"
     challenge_interactive_joinrisk_custom: conint(ge=0, le=100) = 70
     challenge_interactive_level: conint(ge=0, le=5) = 2
-    challenge_interactive_webpage_splash: constr(
-        regex="^$|^https?://.+", max_length=256
-    ) = ""
     verification_enabled: bool = False
     verification_role: constr(regex=snowflake_re) = "0"
-    verification_webpage_splash: constr(regex="^$|^https?://.+", max_length=256) = ""
     logging_enabled: bool = False
     logging_channel: constr(regex=snowflake_re) = "0"
     logging_option_join: bool = False
