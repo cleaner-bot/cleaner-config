@@ -9,7 +9,7 @@ class GuildEntitlements(BaseModel):
     plan: conint(ge=0, le=2) = 0
     suspended: bool = False
     partnered: bool = False
-    
+
     antiraid: conint(ge=0, le=2) = 0  # unused
     antispam: conint(ge=0, le=2) = 0  # unused
     backup: conint(ge=0, le=2) = 1

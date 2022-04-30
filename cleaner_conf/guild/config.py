@@ -45,9 +45,7 @@ class GuildConfig(BaseModel):
     ) = ""
     verification_enabled: bool = False
     verification_role: constr(regex=snowflake_re) = "0"
-    verification_webpage_splash: constr(
-        regex="^$|^https?://.+", max_length=256
-    ) = ""
+    verification_webpage_splash: constr(regex="^$|^https?://.+", max_length=256) = ""
     logging_enabled: bool = False
     logging_channel: constr(regex=snowflake_re) = "0"
     logging_option_join: bool = False
