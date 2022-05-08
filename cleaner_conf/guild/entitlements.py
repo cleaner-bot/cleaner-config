@@ -31,7 +31,7 @@ class GuildEntitlements(BaseModel):
     statistics: conint(ge=0, le=2) = 0
     report: conint(ge=0, le=2) = 1
     verification: conint(ge=0, le=2) = 0  # unused
-    workers: conint(ge=0, le=2) = 1  # unused
-    workers_cpu: int = 1e6  # unused
-    workers_ram: int = 1024 * 128  # unused
-    workers_size: int = 1024 * 256  # unused
+    workers: conint(ge=0, le=2) = 1
+    workers_cpu: int = 1e6
+    workers_ram: int = 1024 * 128
+    workers_size: int = 1024 * 256
