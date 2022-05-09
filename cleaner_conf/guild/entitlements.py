@@ -17,7 +17,8 @@ class GuildEntitlements(BaseModel):
     bot_dedicated: conint(ge=0, le=2) = 2  # unused
     branding_splash: conint(ge=0, le=2) = 1
     branding_embed: conint(ge=0, le=2) = 1  # unused
-    branding_vanity: conint(ge=0, le=2) = 1  # unused
+    branding_vanity: conint(ge=0, le=2) = 1
+    branding_vanity_url: str = ""
     challenge_interactive_join_risk: conint(ge=0, le=2) = 1
     contact_standard: conint(ge=0, le=2) = 1
     contact_email: conint(ge=0, le=2) = 1
