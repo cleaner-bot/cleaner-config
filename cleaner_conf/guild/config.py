@@ -26,7 +26,7 @@ class GuildConfig(BaseModel):
     antispam_attachment: bool = True
     antiraid_enabled: bool = False
     antiraid_limit: constr(regex=r"^\d{1,5}/\d{1,3}$") = "10/10"
-    antiraid_metadata: bool = False
+    antiraid_mode: conint(ge=0, le=3) = 0  # all/1day/3days/week
     general_modroles: conlist(
         constr(regex=snowflake_re), max_items=256, unique_items=True
     ) = Field(default_factory=list)
@@ -40,7 +40,7 @@ class GuildConfig(BaseModel):
     challenge_interactive_take_role: bool = False
     challenge_interactive_role: constr(regex=snowflake_re) = "0"
     challenge_interactive_joinrisk_custom: conint(ge=0, le=100) = 70
-    challenge_interactive_level: conint(ge=0, le=5) = 2
+    challenge_interactive_level: conint(ge=0, le=5) = 2  # custom/off/low/medium/high/iuam
     verification_enabled: bool = False
     verification_role: constr(regex=snowflake_re) = "0"
     logging_enabled: bool = False
