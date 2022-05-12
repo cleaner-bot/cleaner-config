@@ -56,23 +56,23 @@ class GuildConfig(BaseModel):
         constr(regex=snowflake_re, max_items=25, unique_items=True)
     ) = Field(default_factory=list)
     antispam_similar: bool = True
-    antispam_similar: conlist(
+    antispam_similar_channels: conlist(
         constr(regex=snowflake_re, max_items=25, unique_items=True)
     ) = Field(default_factory=list)
     antispam_exact: bool = True
-    antispam_exact: conlist(
+    antispam_exact_channels: conlist(
         constr(regex=snowflake_re, max_items=25, unique_items=True)
     ) = Field(default_factory=list)
     antispam_token: bool = True
-    antispam_token: conlist(
+    antispam_token_channels: conlist(
         constr(regex=snowflake_re, max_items=25, unique_items=True)
     ) = Field(default_factory=list)
     antispam_sticker: bool = True
-    antispam_sticker: conlist(
+    antispam_sticker_channels: conlist(
         constr(regex=snowflake_re, max_items=25, unique_items=True)
     ) = Field(default_factory=list)
     antispam_attachment: bool = True
-    antispam_attachment: conlist(
+    antispam_attachment_channels: conlist(
         constr(regex=snowflake_re, max_items=25, unique_items=True)
     ) = Field(default_factory=list)
     antiraid_enabled: bool = False
