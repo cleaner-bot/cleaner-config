@@ -40,7 +40,9 @@ class GuildConfig(BaseModel):
     challenge_interactive_take_role: bool = False
     challenge_interactive_role: constr(regex=snowflake_re) = "0"
     challenge_interactive_joinrisk_custom: conint(ge=0, le=100) = 70
-    challenge_interactive_level: conint(ge=0, le=5) = 2  # custom/off/low/medium/high/iuam
+    challenge_interactive_level: conint(
+        ge=0, le=5
+    ) = 2  # custom/off/low/medium/high/iuam
     verification_enabled: bool = False
     verification_role: constr(regex=snowflake_re) = "0"
     logging_enabled: bool = False
