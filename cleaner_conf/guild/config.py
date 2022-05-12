@@ -56,10 +56,25 @@ class GuildConfig(BaseModel):
         constr(regex=snowflake_re, max_items=25, unique_items=True)
     ) = Field(default_factory=list)
     antispam_similar: bool = True
+    antispam_similar: conlist(
+        constr(regex=snowflake_re, max_items=25, unique_items=True)
+    ) = Field(default_factory=list)
     antispam_exact: bool = True
+    antispam_exact: conlist(
+        constr(regex=snowflake_re, max_items=25, unique_items=True)
+    ) = Field(default_factory=list)
     antispam_token: bool = True
+    antispam_token: conlist(
+        constr(regex=snowflake_re, max_items=25, unique_items=True)
+    ) = Field(default_factory=list)
     antispam_sticker: bool = True
+    antispam_sticker: conlist(
+        constr(regex=snowflake_re, max_items=25, unique_items=True)
+    ) = Field(default_factory=list)
     antispam_attachment: bool = True
+    antispam_attachment: conlist(
+        constr(regex=snowflake_re, max_items=25, unique_items=True)
+    ) = Field(default_factory=list)
     antiraid_enabled: bool = False
     antiraid_limit: constr(regex=r"^\d{1,5}/\d{1,3}$") = "10/10"
     antiraid_mode: conint(ge=0, le=3) = 0  # all/1day/3days/week
