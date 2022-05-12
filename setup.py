@@ -4,7 +4,7 @@ from setuptools import find_namespace_packages, setup  # type: ignore
 
 setup(
     name="cleaner_conf",
-    version="0.1.13",
+    version="0.1.14",
     url="https://github.com/cleaner-bot/cleaner-config",
     author="Leo Developer",
     author_email="git@leodev.xyz",
