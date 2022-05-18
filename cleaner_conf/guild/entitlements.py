@@ -13,6 +13,7 @@ class GuildEntitlements(BaseModel):
     antiraid: conint(ge=0, le=2) = 0  # unused
     antispam: conint(ge=0, le=2) = 0  # unused
     backup: conint(ge=0, le=2) = 1
+    backup_snapshot_limit: int = 25
     bot_limit: conint(ge=0, le=100) = 0  # unused
     bot_dedicated: conint(ge=0, le=2) = 2  # unused
     branding_splash: conint(ge=0, le=2) = 1
