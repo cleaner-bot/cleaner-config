@@ -120,3 +120,10 @@ class GuildConfig(BaseModel):
     branding_embed_enabled: bool = False
     branding_embed_title: constr(max_length=200) = ""
     branding_embed_description: constr(max_length=2048) = ""
+    access_permissions: conint(ge=0, le=2) = 2  # off/admin/admin+manager
+    access_roles: conlist(
+        constr(regex=snowflake_re), max_items=256, unique_items=True
+    ) = Field(default_factory=list)
+    access_members: conlist(
+        constr(regex=snowflake_re), max_items=25, unique_items=True
+    ) = Field(default_factory=list)
