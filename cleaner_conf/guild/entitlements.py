@@ -27,6 +27,7 @@ class GuildEntitlements(BaseModel):
     firewall: conint(ge=0, le=2) = 0  # unused
     impersonation: conint(ge=0, le=2) = 0  # unused
     impersonation_advanced: conint(ge=0, le=2) = 1
+    joinguard: conint(ge=0, le=2) = 1
     logging: conint(ge=0, le=2) = 0  # unused
     logging_downloads: conint(ge=0, le=2) = 1
     logging_retention: conint(ge=3, le=12) = 3

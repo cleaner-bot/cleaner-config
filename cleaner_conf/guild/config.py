@@ -110,6 +110,8 @@ class GuildConfig(BaseModel):
     impersonation_advanced_words: conlist(constr(max_length=32), max_items=300) = Field(
         default_factory=list
     )
+    joinguard_enabled: bool = False
+    joinguard_captcha: bool = False
     report_enabled: bool = False
     report_channel: constr(regex=snowflake_re) = "0"
     workers_enabled: bool = False
