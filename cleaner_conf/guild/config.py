@@ -75,6 +75,11 @@ class GuildConfig(BaseModel):
     antispam_attachment_channels: conlist(
         constr(regex=snowflake_re), max_items=25, unique_items=True
     ) = Field(default_factory=list)
+    antispam_anomaly: bool = False
+    antispam_anomaly_channels: conlist(
+        constr(regex=snowflake_re), max_items=25, unique_items=True
+    ) = Field(default_factory=list)
+    antispam_anomaly_score: conint(ge=0) = 30
     antiraid_enabled: bool = False
     antiraid_limit: constr(regex=r"^\d{1,5}/\d{1,3}$") = "10/10"
     antiraid_mode: conint(ge=0, le=3) = 0  # all/1day/3days/week
